@@ -17,6 +17,8 @@ processes = []
   TIME_FORMAT = 24
   DAY_START = 9
   DAY_END = 2
+  HOSTNAME = "nightscout.cschuijt.nl"
+  PORT = 8080
 
 [experimental]
   allowed_public_ports = []

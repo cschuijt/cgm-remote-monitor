@@ -6,27 +6,43 @@ kill_timeout = 5
 processes = []
 
 [env]
-  MONGODB_COLLECTION = "entries"
   DISPLAY_UNITS = "mmol"
-  ENABLE = "boluscalc iob cob sage basal bolus dbsize"
-  AUTH_DEFAULT_ROLES = "readable"
-  BG_HIGH = 12
-  BG_TARGET_TOP = 10
-  BG_TARGET_BOTTOM = 4
+  ENABLE = "careportal boluscalc rawbg iob cob basal bolus dbsize sage"
+  AUTH_DEFAULT_ROLES = "denied"
+  BG_HIGH = "12"
+  BG_TARGET_TOP = "10"
+  BG_TARGET_BOTTOM = "4"
   BG_LOW = "3.9"
-  TIME_FORMAT = 24
-  DAY_START = 9
-  DAY_END = 2
-  HOSTNAME = "nightscout.cschuijt.nl"
-  PORT = 8080
+  ALARM_URGENT_HIGH = "off"
+  ALARM_HIGH = "off"
+  ALARM_LOW = "off"
+  ALARM_URGENT_LOW = "off"
+  ALARM_TIMEAGO_WARN = "off"
+  ALARM_TIMEAGO_URGENT = "off"
+  DEVICESTATUS_ADVANCED = "on"
+  TIME_FORMAT = "24"
+  DAY_START = "9"
+  DAY_END = "2"
+  THEME = "colors"
+  SHOW_PLUGINS = "iob cob basal bolus delta timeago upbat direction timeago ar2 dbsize sage"
+  DBSIZE_IN_MIB = "true"
+  AR2_CONE_FACTOR = "0"
+  SHOW_RAWBG = "noise"
+  CUSTOM_TITLE = "🐲📊🩸🍬🍰💯"
 
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
+  cmd = ["node", "lib/server/server.js"]
+  entrypoint = []
+  exec = []
+
+[processes]
+  app = "node lib/server/server.js"
 
 [[services]]
   http_checks = []
-  internal_port = 8080
+  internal_port = 1337
   processes = ["app"]
   protocol = "tcp"
   script_checks = []

@@ -29,6 +29,10 @@ processes = []
   AR2_CONE_FACTOR = "0"
   SHOW_RAWBG = "noise"
   CUSTOM_TITLE = "🐲📊🩸🍬🍰💯"
+  SCALE_Y = "linear"
+  SAGE_INFO = "288"
+  SAGE_WARN = "312"
+  SAGE_URGENT = "324"
 
 [experimental]
   allowed_public_ports = []

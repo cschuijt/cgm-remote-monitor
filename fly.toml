@@ -7,7 +7,7 @@ processes = []
 
 [env]
   DISPLAY_UNITS = "mmol"
-  ENABLE = "careportal boluscalc rawbg iob cob basal bolus dbsize sage"
+  ENABLE = "careportal basal dbsize iob cob cage sage boluscalc openaps"
   AUTH_DEFAULT_ROLES = "denied"
   BG_HIGH = "12"
   BG_TARGET_TOP = "10"
@@ -24,15 +24,18 @@ processes = []
   DAY_START = "9"
   DAY_END = "2"
   THEME = "colors"
-  SHOW_PLUGINS = "iob cob basal bolus delta timeago upbat direction timeago ar2 dbsize sage"
+  SHOW_PLUGINS = "delta direction upbat timeago careportal basal dbsize iob cob cage sage boluscalc openaps"
+  SHOW_FORECAST = "openaps"
   DBSIZE_IN_MIB = "true"
-  AR2_CONE_FACTOR = "0"
-  SHOW_RAWBG = "noise"
   CUSTOM_TITLE = "🐲📊🩸🍬🍰💯"
   SCALE_Y = "linear"
   SAGE_INFO = "288"
   SAGE_WARN = "312"
   SAGE_URGENT = "324"
+  CAGE_INFO = "48"
+  CAGE_WARN = "64"
+  CAGE_URGENT = "72"
+  BASAL_RENDER = "default"
 
 [experimental]
   allowed_public_ports = []
